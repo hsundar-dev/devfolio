@@ -1,0 +1,47 @@
+name: Deploy Flutter Web to gh-pages
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to the main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Set up Flutter
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.32.0' # Replace with your desired version
+          channel: 'stable'
+
+      # Install dependencies
+      - name: Install Dependencies
+        run: flutter pub get
+
+      # Build the Flutter web project
+      - name: Build Web
+        run: flutter build web --release
+
+      # Remove the base href line from index.html
+      - name: Remove base href from index.html
+        run: |
+          # Remove <base href="/"> line from build/web/index.html
+          sed -i '/<base href="\//d' build/web/index.html
+          echo "Removed base href line from index.html"
+
+      # Deploy to gh-pages branch
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: build/web
+
+permissions:
+  contents: write
