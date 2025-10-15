@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:devfolio/models/projects_model.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProjectCard extends StatefulWidget {
   final ProjectModel project;
@@ -110,9 +111,7 @@ class _ProjectCardState extends State<ProjectCard> {
                                 : const SizedBox.shrink(),
                             const SizedBox(width: 6),
                             ElevatedButton(
-                              onPressed: () {
-                                // Handle view details
-                              },
+                              onPressed: () => launchUrl(Uri.parse(widget.project.projectUrl)),
                               style: ElevatedButton.styleFrom(
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 16, vertical: 8),

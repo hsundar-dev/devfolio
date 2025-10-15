@@ -97,18 +97,24 @@ class ResponsiveNavBar extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
       color: Colors.white,
-      child: Row(
+      child: Stack(
+        alignment: Alignment.center,
         children: [
-          _buildLogo(),
-          const Spacer(),
+          // Navigation items - centered in the stack
           Row(
+            mainAxisSize: MainAxisSize.min,
             children: navItems
                 .asMap()
                 .entries
                 .map((entry) => _buildNavItem(entry.value, entry.key, context))
                 .toList(),
           ),
-          const Spacer(),
+
+          // Logo / Signature - positioned to the left
+          Align(
+            alignment: Alignment.centerLeft,
+            child: _buildLogo(),
+          ),
         ],
       ),
     );

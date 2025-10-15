@@ -30,7 +30,7 @@ class ProjectRepository {
           technologies: [
             "assets/logos/python.png"
           ],
-          projectUrl:  "https://www.youtube.com/watch?v=mSCn_JWlpMU&feature=youtu.be",
+          projectUrl:  "https://github.com/lonely-dev04/CamAutoGUI",
         ),
         ProjectModel(
           title: "Brahmastra’23 – College Event Website",
@@ -38,8 +38,6 @@ class ProjectRepository {
           imageUrl: "assets/projects/brahmastra.png",
           technologies: [
             "assets/logos/html.png",
-            "assets/logos/css.png",
-            "assets/logos/js.png",
             "assets/logos/php.png",
             "assets/logos/mysql.png"
           ],
@@ -51,8 +49,6 @@ class ProjectRepository {
           imageUrl: "assets/projects/lms.png",
           technologies: [
             "assets/logos/html.png",
-            "assets/logos/css.png",
-            "assets/logos/js.png",
             "assets/logos/php.png",
             "assets/logos/mysql.png"
           ],
@@ -76,7 +72,7 @@ class ProjectRepository {
           technologies: [
             "assets/logos/flutter.png"
           ],
-          projectUrl:  ""
+          projectUrl:  "https://drive.google.com/drive/folders/1NgIvW8u5lTuwJEWVYaJ3wQeKD2WapvhR?usp=sharing"
         )
     ];
   }
