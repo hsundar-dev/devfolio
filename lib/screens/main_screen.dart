@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:devfolio/components/Responsive.dart';
 import 'package:devfolio/components/responsive_navbar.dart';
 import 'package:devfolio/config/text_theme.dart';
+import 'package:devfolio/screens/projects_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'package:sizer/sizer.dart';
@@ -20,7 +21,7 @@ class _MainScreenPcState extends State<MainScreenPc> {
   final ItemPositionsListener _itemPositionsListener = ItemPositionsListener.create();
   int currentIndex = 0;
 
-  static const List<String> sections = ['Home', 'Code'];
+  static const List<String> sections = ['Home', 'Code', 'Projects'];
   static const List<String> carouselItems = [
     'android_studio.png',
     'c.png',
@@ -147,6 +148,12 @@ class _MainScreenPcState extends State<MainScreenPc> {
           height: height,
           color: Colors.grey[200],
           child: const CodeScreen(),
+        );
+      case 2:
+        return _sectionContainer(
+          height: height,
+          color: Colors.white,
+          child: const ProjectsScreen()
         );
       default:
         return const SizedBox();

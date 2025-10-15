@@ -75,6 +75,7 @@ flutter:
     - assets/images/
     - assets/logos/
     - assets/icons/
+    - assets/projects/
 
   fonts:
     - family: Zain

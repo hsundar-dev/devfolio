@@ -1,3 +1,4 @@
+import 'package:devfolio/blocs/project_bloc/project_bloc.dart';
 import 'package:devfolio/screens/splash_screen.dart';
 import 'package:devfolio/services/bloc_observer.dart';
 import 'package:flutter/material.dart';
@@ -13,7 +14,8 @@ void main() async {
   runApp(
       MultiBlocProvider(
           providers: [
-            BlocProvider(create: (_) => CodeBloc())
+            BlocProvider(create: (_) => CodeBloc()),
+            BlocProvider(create: (_) => ProjectBloc())
           ],
           child: const Main()
       )
