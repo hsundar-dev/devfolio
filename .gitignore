@@ -41,3 +41,12 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+*/.git
+__MACOSX/
+*.DS_Store
+Pods/
+DerivedData/
+*.xcframework/
+*.framework/
+*.swiftmodule/
+node_modules/
